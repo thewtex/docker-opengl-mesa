@@ -1,12 +1,4 @@
-#!/bin/sh
-
-version_gt() { test "$(echo "$@" | tr " " "\n" | sort -V | tail -n 1)" == "$1"; }
-docker_version=$(docker version | grep 'Client version' | awk '{split($0,a,":"); print a[2]}')
-# Docker 1.3.0 or later is required for --device
-if ! version_gt "${docker_version}" "1.4.0"; then
-	echo "Docker version 1.3.0 or greater is required"
-	exit 1
-fi
+#!/bin/bash
 
 if test $# -lt 1; then
 	# Get the latest opengl-mesa build
