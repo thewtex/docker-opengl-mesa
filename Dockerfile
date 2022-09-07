@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:bullseye
 MAINTAINER Matt McCormick <matt@mmmccormick.com>
 
 RUN apt-get update
